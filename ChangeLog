@@ -1255,3 +1255,9 @@ This may not be needed any longer.
 
 If -desktop has not been prescribed, try to choose a title based on DISPLAY
 and the hostname (and window name under -id).
+
+2025-02-07  Fred Gleason <fredg@paravelsystems.com>
+	* Modified x11vnc(1) to generate a connection table at
+	'$(HOME).vnc/conntab' every time it is started with the '-xinetd'
+	option.
+

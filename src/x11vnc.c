@@ -129,6 +129,7 @@
  * (which is now the default).
  */
 
+#include <syslog.h>
 
 /* -- x11vnc.c -- */
 
@@ -4209,6 +4210,20 @@ int main(int argc, char* argv[]) {
 
 	orig_use_xdamage = use_xdamage;
 
+	/* Add entry to the connection table */
+	if(inetd && getenv("HOME") && getenv("REMOTE_ADDR") && getenv("REMOTE_PORT")) {
+	        char connname[PATH_MAX];
+		snprintf(connname,PATH_MAX-1,"%s/.vnc/conntab",getenv("HOME"));
+		FILE *f=fopen(connname,"a");
+		if(f==NULL) {
+		        syslog(LOG_WARNING,"failed to open %s: %s",connname,strerror(errno));
+		}
+		else {
+		        fprintf(f,"%d\t%s\t%s\n",getpid(),getenv("REMOTE_ADDR"),getenv("REMOTE_PORT"));
+			fclose(f);
+		}
+	}
+	
 	if (!auto_port && getenv("AUTO_PORT")) {
 		auto_port = atoi(getenv("AUTO_PORT"));
 	}
