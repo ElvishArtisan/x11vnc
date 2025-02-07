@@ -1260,4 +1260,5 @@ and the hostname (and window name under -id).
 	* Modified x11vnc(1) to generate a connection table at
 	'$(HOME).vnc/conntab' every time it is started with the '-xinetd'
 	option.
-
+2025-02-07  Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 0.9.16ea0.
