@@ -10,9 +10,12 @@ desktop_DATA = x11vnc.desktop
 man_MANS = x11vnc.1
 
 EXTRA_DIST = \
+        autogen.sh\
 	ChangeLog \
 	README \
 	NEWS \
 	tkx11vnc \
 	$(man_MANS) \
 	$(desktop_DATA)
+
+CLEANFILES = *.tar.gz

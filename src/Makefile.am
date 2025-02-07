@@ -43,6 +43,7 @@ x11vnc_SOURCES = \
 	cursor.h \
 	default8x16.h \
 	enc.h \
+        enums.h \
 	gui.c \
 	gui.h \
 	help.c \

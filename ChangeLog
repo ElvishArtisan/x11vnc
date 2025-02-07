@@ -1262,3 +1262,6 @@ and the hostname (and window name under -id).
 	option.
 2025-02-07  Fred Gleason <fredg@paravelsystems.com>
 	* Incremented the package version to 0.9.16ea0.
+2025-02-07  Fred Gleason <fredg@paravelsystems.com>
+	* Added 'autogen.sh' and 'src/enums.h' to the 'make dist' target.
+	* Added '*.tar.gz' to the 'make clean' target.
